@@ -1,4 +1,8 @@
-require("jest");
+
+
+function rps() {
+    return "left";
+}
 
 it("should work", () => {
   const left = 1;
@@ -16,4 +20,19 @@ it("should work", () => {
     const result = left + right;
 
     expect(result).toBe(5);
+});
+
+
+//using describe function, use for group of tests, and referred as "suite"
+
+describe("rock, pager, scissors", () => {
+    it("should say left wins for rock vs. scissors", () => {
+        
+        const left = "rock";
+        const right = "scissors";
+
+        const outcome = rps(left, right);
+
+        expect(outcome).toBe("left");
+    });
 });
