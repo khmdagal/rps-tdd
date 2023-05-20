@@ -1,5 +1,10 @@
-function rps(left) {
-  return left === "rock" ? "left" : "right";
+function rps(left, right) {
+  //return left === "rock" ? "left" : "right";
+  if (left === "rock" ||right === "paper") {
+    return "left";
+  }else {
+    return "right";
+  }
 }
 
 it("should work", () => {
@@ -40,4 +45,19 @@ describe("rock, pager, scissors", () => {
 
     expect(result).toBe("right");
   });
+
+  it("should say left wins for scissors vs. pager", () => {
+       const left = "scissors";
+    const right = "paper";
+    
+    const result = rps(left, right);
+    expect(result).toBe("left");
+  });
 });
+
+/*
+We haven't created any new files since the last commit, 
+so we can use the -a/--all flag to git commit to include changes to all files, 
+instead of needing to git add anything.
+
+*/
