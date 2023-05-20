@@ -1,8 +1,8 @@
 function rps(left, right) {
   //return left === "rock" ? "left" : "right";
   if (
-    left === "rock" ||
-    right === "paper" ||
+    (left === "rock" && right === "scissors") ||
+    (left === "scissors" && right === "paper") ||
     (left === "paper" && right === "rock") // the code in the brackets() will be checked as one condition
   ) {
     return "left";
