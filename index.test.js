@@ -1,8 +1,12 @@
 function rps(left, right) {
   //return left === "rock" ? "left" : "right";
-  if (left === "rock" ||right === "paper") {
+  if (
+    left === "rock" ||
+    right === "paper" ||
+    (left === "paper" && right === "rock") // the code in the brackets() will be checked as one condition
+  ) {
     return "left";
-  }else {
+  } else {
     return "right";
   }
 }
@@ -46,21 +50,33 @@ describe("rock, pager, scissors", () => {
     expect(result).toBe("right");
   });
 
-  it("should say left wins for scissors vs. pager", () => {
-       const left = "scissors";
+  //6/10
+  it("should say left wins for scissors vs. paper", () => {
+    const left = "scissors";
     const right = "paper";
-    
+
     const result = rps(left, right);
     expect(result).toBe("left");
   });
 
-  it("should say righ wins for paper vs. scissors", () => {
+  // 7/10
+  it("should say right wins for paper vs. scissors", () => {
     const left = "paper";
     const right = "scissors";
 
     const result = rps(left, right);
 
     expect(result).toBe("right");
+  });
+
+  //8/10
+  it("should say left wins for paper vs. rock", () => {
+    const left = "paper";
+    const right = "rock";
+
+    const result = rps(left, right);
+
+    expect(result).toBe("left");
   });
 });
 
