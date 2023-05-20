@@ -1,5 +1,8 @@
 function rps(left, right) {
   //return left === "rock" ? "left" : "right";
+  if (left === right) {
+    return "draw";
+  }
   if (
     (left === "rock" && right === "scissors") ||
     (left === "scissors" && right === "paper") ||
@@ -80,6 +83,16 @@ describe("rock, pager, scissors", () => {
   });
 });
 
+
+//Draw! [9/10]
+
+
+// This is another test suite?
+["rock", "paper", "scissors"].forEach((both) => {
+  it(`should say draw for ${both} vs ${both}`, () => {
+    expect(rps(both, both)).toBe("draw");
+  });
+});
 /*
 We haven't created any new files since the last commit, 
 so we can use the -a/--all flag to git commit to include changes to all files, 
